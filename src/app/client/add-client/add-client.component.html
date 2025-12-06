@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-md-12 col-md-offset-2">
+    <h1>Client</h1>
+    <form [formGroup]="clientService.dataForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="libelle" class="form-label">Libelle</label>
+        <input
+          type="text"
+          class="form-control"
+          id="libelle"
+          name="libelle"
+          formControlName="libelle"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Adresse</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          name="address"
+          formControlName="adresse"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="tel" class="form-label">Telephone</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="tel"
+          name="tel"
+          formControlName="tel"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          formControlName="email"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="fax" class="form-label">Fax</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fax"
+          name="fax"
+          formControlName="fax"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="login" class="form-label">Login</label>
+        <input
+          type="text"
+          class="form-control"
+          id="login"
+          name="login"
+          formControlName="login"
+        />
+      </div>
+      <!-- <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          formControlName="password"
+        />
+      </div> -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
