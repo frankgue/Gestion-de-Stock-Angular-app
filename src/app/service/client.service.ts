@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Client } from '../models/client';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +30,8 @@ export class ClientService {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
 
-  getAll():  Observable<Object> {
-    return this.http.get(`${this.baseUrl}`);
+  getAll():  Observable<Client[]> {
+    return this.http.get<Client[]>(`${this.baseUrl}`);
   }
 
 }

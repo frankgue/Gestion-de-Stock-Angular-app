@@ -1,1 +1,141 @@
-<p>add-article works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-md-offset-2">
+      <h1>Articles</h1>
+      <form [formGroup]="articleService.dataForm" (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="id" name="id" id="id" />
+        <div class="mb-3">
+          <label for="libelle" class="form-label">Libelle</label>
+          <input
+            type="text"
+            class="form-control"
+            id="libelle"
+            name="libelle"
+            formControlName="libelle"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="code" class="form-label">Code</label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="code"
+            name="code"
+            formControlName="code"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="pa" class="form-label">Prix Achat</label>
+
+          <input
+            type="number"
+            class="form-control"
+            id="pa"
+            name="pa"
+            formControlName="pa"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="pv" class="form-label">Prix Vente</label>
+
+          <input
+            type="number"
+            class="form-control"
+            id="pv"
+            name="pv"
+            formControlName="pv"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="tva" class="form-label">TVA</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="tva"
+            formControlName="tva"
+          >
+            <option selected value="0">Select TVA</option>
+            <option *ngFor="let item of tvaList" value="{{ item }}">
+              {{ item }}
+            </option>
+          </select>
+      
+        </div>
+        <div class="mb-3">
+          <label for="fodec" class="form-label">FODEC</label>
+
+          <input
+            type="number"
+            class="form-control"
+            id="fodec"
+            name="fodec"
+            formControlName="fodec"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="stockInit" class="form-label">Stock Initial</label>
+
+          <input
+            type="number"
+            class="form-control"
+            id="stockInit"
+            name="stockInit"
+            formControlName="stockInit"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="stock" class="form-label">Stock</label>
+
+          <input
+            type="number"
+            class="form-control"
+            id="stock"
+            name="stock"
+            formControlName="stock"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="codeCateg" class="form-label">Code Categorie</label>
+
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="codeCateg"
+            formControlName="codeCateg"
+          >
+            <option selected value="0">Select Category</option>
+            <option *ngFor="let item of categoryList" value="{{ item.code }}">
+              {{ item.libelle }}
+            </option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="codeSCateg" class="form-label">Code SCategorie</label>
+
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="codeSCateg"
+            formControlName="codeSCateg"
+          >
+            <option selected value="0">Select SCategory</option>
+            <option *ngFor="let item of scategoryList" value="{{ item.code }}">
+              {{ item.libelle }}
+            </option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-database"></i> &nbsp;Submit
+        </button>
+        &nbsp;
+        <button type="button" class="btn btn-outline-dark" [mat-dialog-close]>
+          <i class="fa fa-close"></i> &nbsp;Close
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -18,6 +18,12 @@ import { provideHttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideToastr, ToastrModule } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -39,6 +45,11 @@ import { provideAnimations } from '@angular/platform-browser/animations';
     NgbModule,
     ReactiveFormsModule,
     FormsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatDialogModule,
     ToastrModule.forRoot(),
   ],
   providers: [provideHttpClient(), provideAnimations(), provideToastr()],

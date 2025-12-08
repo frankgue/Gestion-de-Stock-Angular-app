@@ -1,1 +1,51 @@
-<p>list-category works!</p>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Liste Categories</a>
+    <form class="d-flex">
+      <button
+        class="btn btn-outline-success"
+        type="submit"
+        (click)="addCategory()"
+      >
+        <i class="fa fa-plus"></i></button
+      >&nbsp; &nbsp;
+
+      <a routerLink="/categories" class="btn btn-outline-danger" type="button"
+        >Log Out</a
+      >
+    </form>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Libelle</th>
+          <th scope="col">Code</th>
+          <th scope="col" class="text-center">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of categoryService.listData">
+          <td>{{ item.id }}</td>
+          <td>{{ item.libelle }}</td>
+          <td>{{ item.code }}</td>
+
+          <td class="text-center">
+            <button class="btn btn-warning me-2" (click)="selectData(item)">
+              <i class="fa fa-pencil-square-o"></i>
+            </button>
+
+            <button class="btn btn-danger" (click)="removeData(item.id!)">
+              <i class="fa fa-trash-o"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
